@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon";
+import jewel from "../../images/jewel.jpg";
 
 const cardData = [
   {
@@ -35,7 +36,7 @@ const cardData = [
       <div class="col-md-6 col-xs-5">
         <div class="card">
           <div class="news-big-card positon-relative">
-            <img src="/src/images/jewel.jpg" alt="" />
+            <img src={jewel} alt="" />
             <div class="news-card-text">
               <div class="small-text">
                 <p><i class="fa-solid fa-folder-open px-1"></i>Shopping</p>

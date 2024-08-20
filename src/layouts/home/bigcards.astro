@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon";
+import women from "../../images/womenlatest.jpg";
+import men from "../../images/menlatest.jpg";
 ---
 
 <div class="big-card">
@@ -7,7 +9,7 @@ import { Icon } from "astro-icon";
     <div class="row">
       <div class="col-md-6 pb-4">
         <div class="card-image position-relative">
-          <img src="/src/images/womenlatest.jpg" alt="" />
+          <img src={women} alt="" />
           <div class="bigcard-text">
             <p>Get 40% Off</p>
             <h3>Women's New Collection</h3>
@@ -21,7 +23,7 @@ import { Icon } from "astro-icon";
       </div>
       <div class="col-md-6">
         <div class="card-image position-relative">
-          <img src="/src/images/menlatest.jpg" alt="" />
+          <img src={men} alt="" />
           <div class="bigcard-text">
             <p>Stay Upto Date</p>
             <h3>Men's Trendy fashion</h3>
