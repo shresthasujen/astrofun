@@ -1,0 +1,123 @@
+---
+import card1 from "@images/latestarival/bluedenimmen.jpg";
+import card2 from "@images/latestarival/cargopant.jpg";
+import card3 from "@images/latestarival/leathershoe.jpg";
+import card4 from "@images/latestarival/overcoat.jpg";
+import card5 from "@images/latestarival/highshirts.jpg";
+import card6 from "@images/latestarival/brownsweat.jpg";
+import card7 from "@images/latestarival/whitehoody.jpg";
+import card8 from "@images/latestarival/blackjeansmen.jpg";
+
+import { Icon } from "astro-icon";
+const cardData = [
+  {
+    img: card1,
+    review: "10 Reviews",
+    title: "Women's brown jacket",
+    price: "$49",
+  },
+  {
+    img: card2,
+    review: "3 Reviews",
+    title: "Men's cargo pant",
+    price: "$24",
+  },
+  {
+    img: card3,
+    review: "6 Reviews",
+    title: "Black leather shoe",
+    price: "$29",
+  },
+  {
+    img: card4,
+    review: "2 Reviews",
+    title: "Men's long jacket",
+    price: "$79",
+  },
+  {
+    img: card5,
+    review: "2 Reviews",
+    title: "Black high shirts",
+    price: "$79",
+  },
+  {
+    img: card6,
+    review: "2 Reviews",
+    title: "Brown sweatshirt",
+    price: "$79",
+  },
+  {
+    img: card7,
+    review: "2 Reviews",
+    title: "White hoodie",
+    price: "$79",
+  },
+  {
+    img: card8,
+    review: "2 Reviews",
+    title: "Black jeans ",
+    price: "$79",
+  },
+];
+---
+
+<div class="container card-sliderbg">
+  <div class="row">
+    {
+      cardData.map((data) => (
+        <div class="swiper-slide  col-md-3  col-sm-4 col-xs-2">
+          <div class="position-relative ">
+            {" "}
+            <div class="card ">
+              <img src={data.img} class="card-img-top" alt="..." />
+              <div class="card-body">
+                <div class="card-text">
+                  <p class="text-muted review">
+                    <i class="fa-solid fa-star" style="color: #e5c838;" />
+                    <i class="fa-solid fa-star" style="color: #e5c838;" />
+                    <i class="fa-solid fa-star" style="color: #e5c838;" />
+
+                    {data.review}
+                  </p>
+                  <h5>{data.title}</h5>
+                  <p class="price-1">
+                    {data.price} <del class="price-cut">$5557</del>
+                  </p>
+                  <div class="dot-container">
+                    <div class="dot-3 d-flex">
+                      {" "}
+                      <div class="dot" />
+                      <div class="dot" style="background-color:gold ;" />
+                      <div
+                        class="dot"
+                        style="background-color:rgb(228, 14, 14) ;"
+                      />
+                    </div>
+                    <div class="size-icon d-flex">
+                      {" "}
+                      <img
+                        class="size-logo"
+                        src="/src/images/ssize.png"
+                        alt=""
+                      />
+                      <img
+                        class="size-logo"
+                        src="/src/images/msize.png"
+                        alt=""
+                      />
+                      <img
+                        class="size-logo"
+                        src="/src/images/xlsize.png"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

@@ -1,0 +1,148 @@
+---
+import card1 from "@images/latestarival/brownwear.jpg";
+import card2 from "@images/latestarival/cargopant.jpg";
+import card3 from "@images/latestarival/leathershoe.jpg";
+import card4 from "@images/latestarival/overcoat.jpg";
+import card5 from "@images/latestarival/blackjeansmen.jpg";
+import card6 from "@images/latestarival/women/classytop.jpg";
+import card7 from "@images/latestarival/bluedenimmen.jpg";
+import card8 from "@images/latestarival/women/womenlongshirt.jpg";
+
+import { Icon } from "astro-icon";
+const cardData = [
+  {
+    img: card1,
+    review: "10 Reviews",
+    title: "Women's brown jacket",
+    price: "$49",
+  },
+  {
+    img: card2,
+    review: "3 Reviews",
+    title: "Men's cargo pant",
+    price: "$24",
+  },
+  {
+    img: card3,
+    review: "6 Reviews",
+    title: "Black leather shoe",
+    price: "$29",
+  },
+  {
+    img: card4,
+    review: "2 Reviews",
+    title: "Men's long jacket",
+    price: "$79",
+  },
+  {
+    img: card5,
+    review: "2 Reviews",
+    title: "Black jeans men",
+    price: "$79",
+  },
+  {
+    img: card6,
+    review: "2 Reviews",
+    title: "Women's classy top",
+    price: "$79",
+  },
+  {
+    img: card7,
+    review: "2 Reviews",
+    title: "Mens blue denim",
+    price: "$79",
+  },
+  {
+    img: card8,
+    review: "2 Reviews",
+    title: "Women's long shirt",
+    price: "$79",
+  },
+];
+---
+
+<div class="container">
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="latest-head">
+      <h2>Latest Arrival</h2>
+      <p>Showing our latest arrival on this summer</p>
+    </div>
+
+    <div class="d-flex gap-3">
+      <button
+        class="btn btn-outline-secondary rounded-circle p-2 heroPrev3-btn arrow-button"
+      >
+        <Icon class="ic-16" name="ph:caret-left-bold" />
+      </button>
+      <button
+        class="btn btn-outline-secondary rounded-circle p-2 heroNext4-btn arrow-button"
+      >
+        <Icon class="ic-16" name="ph:caret-right-bold" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container card-sliderbg">
+  <div class="swiper swiperhero2">
+    <div class="swiper-wrapper">
+      {
+        cardData.map((data) => (
+          <div class="swiper-slide swiper-slide-card me-4">
+            <div class="position-relative ">
+              {" "}
+              <div class="card">
+                <img src={data.img} class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <div class="card-text">
+                    <p class="text-muted review">
+                      <i class="fa-solid fa-star" style="color: #e5c838;" />
+                      <i class="fa-solid fa-star" style="color: #e5c838;" />
+                      <i class="fa-solid fa-star" style="color: #e5c838;" />
+
+                      {data.review}
+                    </p>
+                    <h5>{data.title}</h5>
+                    <p class="price-1">
+                      {data.price} <del class="price-cut">$5557</del>
+                    </p>
+                    <div class="dot-container">
+                      <div class="dot-3 d-flex">
+                        {" "}
+                        <div class="dot" />
+                        <div class="dot" style="background-color:gold ;" />
+                        <div
+                          class="dot"
+                          style="background-color:rgb(228, 14, 14) ;"
+                        />
+                      </div>
+                      <div class="size-icon d-flex">
+                        {" "}
+                        <img
+                          class="size-logo"
+                          src="/src/images/ssize.png"
+                          alt=""
+                        />
+                        <img
+                          class="size-logo"
+                          src="/src/images/msize.png"
+                          alt=""
+                        />
+                        <img
+                          class="size-logo"
+                          src="/src/images/xlsize.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</div>
+<div class="swiper-pagination"></div>

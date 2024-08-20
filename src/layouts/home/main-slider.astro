@@ -1,0 +1,63 @@
+---
+import slider1 from "@images/men.png";
+import slider2 from "@images/women.png";
+import { Icon } from "astro-icon";
+const serviceData = [
+  {
+    img: slider1,
+    title: "Discover Men's Latest Fashion",
+    desc: "SUMMER SALE IS ON",
+  },
+  {
+    img: slider2,
+    title: "Discover Women's Latest Fashion",
+    desc: "SUMMER SALE IS ON",
+  },
+];
+---
+
+<section class="slider-1">
+  <div class="swiper swiperhero1">
+    <div class="swiper-wrapper">
+      {
+        serviceData.map((data) => (
+          <div class="swiper-slide">
+            <div class="main-sliderbg position-relative">
+              <div class="sliding">
+                <div class="container">
+                  <div class="row justify-content-center align-items-center">
+                    <div class="col-md-6">
+                      <div class="text-sm-start text-center mb-sm-0 mb-3">
+                        <p>{data.desc}</p>
+                        <h1 class="slider-head font-weight-bold">
+                          {data.title}
+                        </h1>
+                        <button type="button" class="btn-1">
+                          <a href="#">EXPLORE NOW</a>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="slider-img-main">
+                        <img src={data.img} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider-button-wrapper">
+                <button class="btn btn-outline-secondary rounded-circle p-3 heroPrev1-btn arrow-button">
+                  <Icon class="ic-16" name="ph:caret-left-bold" />
+                </button>
+                <button class="btn btn-outline-secondary rounded-circle p-3 heroNext1-btn arrow-button">
+                  <Icon class="ic-16" name="ph:caret-right-bold" />
+                </button>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>

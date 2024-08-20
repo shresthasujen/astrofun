@@ -1,0 +1,140 @@
+---
+import card1 from "@images/gridcard/menfashion.jpg";
+import card2 from "@images/gridcard/shoescard.jpg";
+import card3 from "@images/gridcard/couplecard.jpg";
+import card4 from "@images/gridcard/glasscard.jpg";
+import card5 from "@images/gridcard/girlslatest.jpg";
+import card6 from "@images/gridcard/bagcard.jpg";
+import card7 from "@images/gridcard/couple2.jpg";
+
+import { Icon } from "astro-icon";
+const cardData = [
+  {
+    img: card1,
+    review: "Get 40% Off",
+    title: "Man's Latest Collection",
+    link: "SHOP NOW",
+  },
+  {
+    img: card2,
+    review: "New Arrival",
+    title: "Exclusive Shoes Collection",
+    link: "EXPLORE NOW",
+  },
+  {
+    img: card7,
+    review: "New in 2023",
+    title: "Best Collection For Stylish Couple",
+    link: "EXPLORE NOW",
+  },
+  {
+    img: card4,
+    review: "Get 40% Off",
+    title: "Rachele Trendy Sunglass",
+    link: "SHOPNOW",
+  },
+  {
+    img: card5,
+    review: "Be Stylish",
+    title: "Girl's Latest Fashion",
+    link: "SHOP NOW",
+  },
+  {
+    img: card6,
+    review: "New In 2023",
+    title: "Discover New Bag Collection",
+    link: "EXPLORENOW",
+  },
+];
+---
+
+<section class="collection">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-4 col-sm-6">
+        <div class="square position-relative mb-4">
+          <img src="/src/images/gridcard/menfashion.jpg" alt="" />
+          <div class="square-text">
+            <p>Get 40% Off</p>
+            <h4>Man's Latest Collection</h4>
+            <p>SHOP NOW</p>
+          </div>
+        </div>
+        <div class="vert mb-4">
+          <img src="/src/images/gridcard/shoescard.jpg" alt="" />
+          <div class="vert-text">
+            <p>New Arrival</p>
+            <h4>Exclusive Shoes Collection</h4>
+            <p>EXPLORE NOW</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="vert mb-4">
+          <img src="/src/images/gridcard/couplecard.jpg" alt="" />
+          <div class="vert3-text">
+            <p>New in 2023</p>
+            <h4>Discover New Bag Collection</h4>
+            <p>EXPLORE NOW</p>
+          </div>
+        </div>
+        <div class="square mb-4">
+          <img src="/src/images/gridcard/glasscard.jpg" alt="" />
+          <div class="square-text">
+            <p>Get 40% Off</p>
+            <h4>Rachele Trendy Sunglass</h4>
+            <p>SHOP NOW</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-6 last-grid">
+        <div class="square mb-4">
+          <img src="/src/images/gridcard/girlslatest.jpg" alt="" />
+          <div class="square-text">
+            <p>Be Stylish</p>
+            <h4>Girl's Latest Fashion</h4>
+            <p>SHOP NOW</p>
+          </div>
+        </div>
+        <div class="vert mb-4">
+          <img src="/src/images/gridcard/bagcard.jpg" alt="" />
+          <div class="vert3-text">
+            <p>New in 2023</p>
+            <h4>Discover New Bag Collection</h4>
+            <p>EXPLORE NOW</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- mobile section -->
+<section class="mobile-grid">
+  <div class="container">
+    <div class="container card-sliderbg">
+      <div class="swiper swiperhero2">
+        <div class="swiper-wrapper">
+          {
+            cardData.map((data) => (
+              <div class="swiper-slide swiper-slide-card me-4">
+                <div class="position-relative ">
+                  {" "}
+                  <div class="mobile-card position-relative mb-4">
+                    <img src={data.img} alt="" />
+                    <div class="mobile-card-text">
+                      <p>{data.review}</p>
+                      <h6>{data.title}</h6>
+                      <p>{data.link}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>

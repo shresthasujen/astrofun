@@ -1,0 +1,88 @@
+---
+import { Icon } from "astro-icon";
+
+const cardData = [
+  {
+    text: "Shopping",
+    time: "May 31, 2022",
+    title: "When the music over turn off the light",
+  },
+  {
+    text: "Shopping",
+    time: "May 31, 2022",
+    title: "When the music over turn off the light",
+  },
+  {
+    text: "Shopping",
+    time: "May 31, 2022",
+    title: "When the music over turn off the light",
+  },
+  {
+    text: "Shopping",
+    time: "May 31, 2022",
+    title: "When the music over turn off the light",
+  },
+];
+---
+
+<div class="latest-news pt-5">
+  <div class="container">
+    <div class="latest-head">
+      <h2>Latest News</h2>
+      <p>Showing our latest arrival on this summer</p>
+    </div>
+    <div class="row align-items-center justify-content-center news-flex">
+      <div class="col-md-6 col-xs-5">
+        <div class="card">
+          <div class="news-big-card positon-relative">
+            <img src="/src/images/jewel.jpg" alt="" />
+            <div class="news-card-text">
+              <div class="small-text">
+                <p><i class="fa-solid fa-folder-open px-1"></i>Shopping</p>
+                <p><i class="fa-solid fa-clock px-1"></i>May 31, 2022</p>
+                <p><i class="fa-solid fa-user px-1"></i>Jewel Khan</p>
+              </div>
+              <h4>When the musics over off the light</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-xs-5">
+        <div class="row align-items-center justify-content-center pt-4">
+          {
+            cardData.map((data) => (
+              <div class="col-sm-6">
+                {" "}
+                <div class="news-card">
+                  <div class="card-text">
+                    <div class="small-text">
+                      <p>
+                        <i class="fa-solid fa-folder-open" />
+                        {data.text}
+                      </p>
+                      <p>
+                        <i class="fa-solid fa-clock" />
+                        {data.time}
+                      </p>
+                    </div>
+                    <h5>{data.title}</h5>
+                    <div class="small-card-text pt-5 text-start">
+                      {" "}
+                      <p>
+                        {" "}
+                        <a class="btn">
+                          <Icon class="ic-16" name="ph:caret-right-bold" />
+                        </a>{" "}
+                        READ MORE
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

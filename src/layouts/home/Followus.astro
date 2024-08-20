@@ -1,0 +1,87 @@
+---
+import card1 from "@images/instagram/beautifulwomen.jpg";
+import card2 from "@images/instagram/charminglady.jpg";
+import card3 from "@images/instagram/girlwithhanger.jpg";
+import card4 from "@images/instagram/girlwithhat.jpg";
+import card5 from "@images/instagram/prettymale.jpg";
+import card6 from "@images/instagram/stylishgirl.jpg";
+import card7 from "@images/instagram/sunnyfashion.jpg";
+import card8 from "@images/instagram/twowomen.jpg";
+import card9 from "@images/smallcard/women.jpg";
+import zara from "@images/brand/Zara.png";
+import prada from "@images/brand/prada.jpg";
+import versace from "@images/brand/versace.png";
+import lv from "@images/brand/Lvlogo.png";
+import { Icon } from "astro-icon";
+const cardData = [
+  {
+    img: card1,
+  },
+  {
+    img: card2,
+  },
+  {
+    img: card3,
+  },
+  {
+    img: card4,
+  },
+  {
+    img: card5,
+  },
+  {
+    img: card6,
+  },
+  {
+    img: card7,
+  },
+  {
+    img: card8,
+  },
+  {
+    img: card9,
+  },
+];
+const logoData = [{ img: zara }, { img: lv }, { img: versace }, { img: prada }];
+---
+
+<div class="follow-us pt-5 mt-4">
+  <div class="container">
+    <div class="latest-head text-center pb-4">
+      <h2>Follow Us in Instagram @Rachele</h2>
+    </div>
+  </div>
+
+  <div class="container card-sliderbg">
+    <div class="swiper swiperhero6">
+      <div class="swiper-wrapper">
+        {
+          cardData.map((data) => (
+            <div class="swiper-slide swiper-slide-card-small">
+              {" "}
+              <div class="small-card">
+                {" "}
+                <div class="small-card-image">
+                  <img src={data.img} class="card-img-top" alt="..." />
+                </div>{" "}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="container">
+      <div class="brand-logo pt-5">
+        <div class="row">
+          {
+            logoData.map((data) => (
+              <div class="col-md-3 col-sm-3 col-xs-2">
+                <img src={data.img} alt="" />
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

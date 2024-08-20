@@ -1,0 +1,101 @@
+---
+import christ from "@images/clients/christopher.jpg";
+import elsa from "@images/clients/Elsa.jpg";
+import mike from "@images/clients/mike.jpg";
+import ema from "@images/clients/ema.jpg";
+
+import { Icon } from "astro-icon";
+const cardData = [
+  {
+    img: christ,
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dicta voluptates minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores.",
+    title: "Christopher Chris",
+    post: "Journalist",
+  },
+  {
+    img: elsa,
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dicta voluptates minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores.",
+    title: "Elsa Watson",
+    post: "Web Developer",
+  },
+  {
+    img: mike,
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dicta voluptates minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores.",
+    title: "Mike Anderson",
+    post: "Software Engineer",
+  },
+  {
+    img: ema,
+    review:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A dicta voluptates minima! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores.",
+    title: "Ema Stone",
+    post: "Reporter",
+  },
+];
+---
+
+<div class="client-review">
+  <div class="sliding">
+    <div class="container">
+      <div class="row slide-flex align-items-center justify-content-center">
+        <div class="slider-text col">
+          <p>Featured Product</p>
+          <h2 class="slider-head">What Customers<br /> Say About Us<br /></h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit,
+            minima molestias?
+          </p>
+          <div1 class="d-flex gap-2">
+            <button
+              class="btn btn-outline-secondary rounded-circle p-2 heroPrev1-btn arrow-button"
+            >
+              <Icon class="ic-16" name="ph:caret-left-bold" />
+            </button>
+            <button
+              class="btn btn-outline-secondary rounded-circle p-2 heroNext1-btn arrow-button"
+            >
+              <Icon class="ic-16" name="ph:caret-right-bold" />
+            </button>
+          </div1>
+        </div>
+        <div class="col-md-7 col-sm-7">
+          <div class="review-slider-img">
+            <div class="swiper swiperhero5">
+              <div class="swiper-wrapper">
+                {
+                  cardData.map((data) => (
+                    <div class="swiper-slide  col-md-3  col-sm-4 col-xs-2">
+                      {" "}
+                      <div class="card" style="width: 18rem;">
+                        <div class="review-card-body">
+                          <i class="fa-sharp fa-solid fa-quote-left" />
+                          <p class="card-text">{data.review}</p>
+                          <div class="row">
+                            <div class="profile">
+                              {" "}
+                              <img class="img-fluid" src={data.img} alt="" />
+                              <div class="profile-text">
+                                {" "}
+                                <h6 class="card-subtitle  text-muted">
+                                  {data.title}
+                                </h6>
+                                <p>{data.post}</p>
+                              </div>
+                            </div>{" "}
+                          </div>{" "}
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

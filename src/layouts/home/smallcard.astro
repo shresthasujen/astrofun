@@ -1,0 +1,108 @@
+---
+import card1 from "@images/smallcard/cloths.jpg";
+import card2 from "@images/smallcard/bags.jpg";
+import card3 from "@images/smallcard/watch.jpg";
+import card4 from "@images/smallcard/jewllery.jpg";
+import card5 from "@images/smallcard/shoes.jpg";
+import card6 from "@images/smallcard/glass.jpg";
+import card7 from "@images/smallcard/beautyproduct.jpg";
+import card8 from "@images/smallcard/menacces.jpg";
+import card9 from "@images/smallcard/women.jpg";
+import { Icon } from "astro-icon";
+const cardData = [
+  {
+    img: card1,
+    title: "Cloths",
+    price: "192 Items",
+  },
+  {
+    img: card2,
+    title: "Bags",
+    price: "170 Items",
+  },
+  {
+    img: card3,
+    title: "Watches",
+    price: "191 Items",
+  },
+  {
+    img: card4,
+    title: "Jwellery",
+    price: "190 Items",
+  },
+  {
+    img: card5,
+    title: "Sneakers",
+    price: "180 Items",
+  },
+  {
+    img: card6,
+    title: "Glasses",
+    price: "190 Items",
+  },
+  {
+    img: card7,
+    title: "Beauty Products",
+    price: "197 Items",
+  },
+  {
+    img: card8,
+    title: "Men Accessories",
+    price: "100 Items",
+  },
+  {
+    img: card9,
+    title: "Women Accessories",
+    price: "120 Items",
+  },
+];
+---
+
+<div class="small-card-swipe">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="latest-head">
+        <h2>Shop By Category</h2>
+        <p>Showing our latest arrival on this summer</p>
+      </div>
+
+      <div class="d-flex gap-3">
+        <button
+          class="btn btn-outline-secondary rounded-circle p-2 heroPrev3-btn arrow-button"
+        >
+          <Icon class="ic-16" name="ph:caret-left-bold" />
+        </button>
+        <button
+          class="btn btn-outline-secondary rounded-circle p-2 heroNext4-btn arrow-button"
+        >
+          <Icon class="ic-16" name="ph:caret-right-bold" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container card-sliderbg">
+    <div class="swiper swiperhero4">
+      <div class="swiper-wrapper">
+        {
+          cardData.map((data) => (
+            <div class="swiper-slide swiper-slide-card-small">
+              {" "}
+              <div class="small-card">
+                {" "}
+                <div class="small-card-image">
+                  <img src={data.img} class="card-img-top" alt="..." />
+                </div>{" "}
+                <div class="small-card-text">
+                  <h6>{data.title}</h6>
+                  <p>{data.price}</p>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+</div>
